@@ -1,0 +1,48 @@
+[
+  [
+    { "connection": "The Cure Albums", "items": ["Disintegration", "Pornography", "Faith", "Wish"] },
+    { "connection": "Echo & the Bunnymen Songs", "items": ["The Cutter", "Rescue", "Lips Like Sugar", "Seven Seas"] },
+    { "connection": "Joy Division Song Words Missing End", "items": ["She's Lost", "Love Will Tear", "Pass", "Day of the"] },
+    { "connection": "VHS Songs missing last word", "items": ["One Left Over", "Kill me", "Tomorrow We", "As Above So"] }
+  ],
+  [
+    { "connection": "My Kingdom Lyrics", "items": ["Cucumber", "Cabbage", "Cauliflower", "April Showers"] },
+    { "connection": "Vegetables", "items": ["Carrot", "Bell Pepper", "Broccoli", "Brussel Sprouts"] },
+    { "connection": "Starting with DND party members", "items": ["Hell's Kitchen", "Fig Newton", "Dog Food", "Berry Smoothie"] },
+    { "connection": "Friday I'm in Love Lyrics", "items": ["Fall Apart", "Break my Heart", "Doesn't Start", "In Love"] }
+
+  ],
+  [
+    { "connection": "Ary's friends -- kinda", "items": ["Lore", "Sonny", "Ariel", "Abdominal Muscles"] },
+    { "connection": "Last Names of Joy Division / New Order Members", "items": ["Curtis", "Hook", "Sumner", "Morris"] },
+    { "connection": "Parts of a Record Player", "items": ["Needle", "Platter", "Tonearm", "Cartridge"] },
+    { "connection": "___ Punk", "items": ["Art", "Post", "Pop", "Crust"] }
+  ],
+  [
+    { "connection": "Parts of songs from Ocean Rain", "items": ["Moon", "Thorn", "Seven", "Crystal"] },
+    { "connection": "Blue Öyster Cult Horror Entities", "items": ["Godzilla", "Nosferatu", "Reaper", "Spectre"] },
+    { "connection": "The Sound songs", "items": ["Missles", "Jeapordy", "Skeletons", "Possession"] },
+    { "connection": "___ Wave", "items": ["New", "Cold", "Dark", "No"] }
+
+  ],
+  [
+    { "connection": "Echo Songs that are Animals", "items": ["Monkeys", "Crocodiles", "Horses", "Porcupine"] }, 
+    { "connection": "Animal parts of band names", "items": ["Geese", "Bunny", "Chameleons", "Oyster"] },
+    { "connection": "Pedals", "items": ["Reverb", "Delay", "Flanger", "Distortion"] },
+    { "connection": "Songs on Kiss Me Kiss Me", "items": ["Catch", "Torture", "Fight", "Snakepit"] }
+
+  ],
+  [ 
+    { "connection": "Our DND Puzzle Items", "items": ["Snowman", "Gemstone", "Mirror", "Iron Mould"] },
+    { "connection": "Things associated with winter", "items": ["Snow", "Ice", "Igloo", "Sledding"] },
+    { "connection": "Pokemon Types", "items": ["Dark", "Water", "Dragon", "Bug"] },
+    { "connection": "Joy Division Songs", "items": ["Atmosphere", "Transmission", "Isolation", "Disorder"] }
+  ],
+
+  [ 
+    { "connection": "Places I've hidden notes for you", "items": ["Record Shelf", "Blanket Canopy", "Guitar Strings", "Desk"] },
+    { "connection": "Ary-isms", "items": ["I ate that", "Aces", "Aw Beans", "That's what they called me in college"] },
+    { "connection": "Starting with dog names", "items": ["Elvis Presley", "Lev Tolstoy", "Olive Garden", "Agnes Moorehead"] },
+    { "connection": "DJSC Bands", "items": ["Depeche Mode", "Joy Division", "The Cure", "The Smiths"] }
+  ]
+]
