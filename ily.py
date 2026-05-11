@@ -223,7 +223,7 @@ def open_game():
             if word in selected:
 
                 selected.remove(word)
-                btn.configure(bg="#2a2a2a")
+                btn.configure(bg="grey")
 
             else:
 
