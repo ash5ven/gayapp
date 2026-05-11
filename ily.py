@@ -212,7 +212,7 @@ def open_game():
             for word, btn in buttons.items():
 
                 if btn["state"] != "disabled":
-                    btn.configure(bg="gray")
+                    btn.configure(bg="grey")
 
         def select_word(word):
 
