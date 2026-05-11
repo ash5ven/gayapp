@@ -411,14 +411,6 @@ def random_mbambam():
     print("Opening playlist at index:", random_index)
     webbrowser.open(url)
 
-def random_song():
-
-    playlist_id = "3loAqwFspreWaLWbaG8u4l"
-
-    url = f"spotify:playlist:{playlist_id}"
-
-    webbrowser.open(url)
-
 # Button 1: Letter
 btn1 = tk.Button(root, text="A Letter", font=("Courier New", 15), width=30, command=show_letter)
 btn1.pack(pady=10)
@@ -434,9 +426,5 @@ btn3.pack(pady=10)
 # Button 4: Mbambam
 btn4 = tk.Button(root, text="Mbambam of the day", font=("Courier New", 15), width=30, command=random_mbambam)
 btn4.pack(pady=10)
-
-# Button 5: Song
-btn5 = tk.Button(root, text="Song of the day", font=("Courier New", 15), width=30, command=random_song)
-btn5.pack(pady=10)
 
 root.mainloop()
