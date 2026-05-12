@@ -34,12 +34,7 @@ title1.pack(pady=20)
 
 
 def resource_path(relative_path):
-    """ Get absolute path to resource """
-    try:
-        base_path = sys._MEIPASS
-    except Exception:
-        base_path = os.path.abspath(".")
-
+    base_path = os.path.dirname(os.path.abspath(__file__))
     return os.path.join(base_path, relative_path)
 
 json_path = resource_path("connections.json")
@@ -149,7 +144,7 @@ def open_game():
         buttons = {}
         solved = 0
 
-        with open('connections.json', 'r') as file:
+        with open(resource_path('connections.json'), 'r') as file:
             data = json.load(file)
 
         level_array = data[level_number]
