@@ -6,6 +6,7 @@ import http.client
 import webbrowser
 import os 
 import sys
+import requests
 
 levels = [1, 2, 3, 4, 5, 6, 7]
 
@@ -110,6 +111,10 @@ def open_game():
 
     def start_level(level_number):
 
+        def clear_selection_safe():
+            nonlocal selected
+            selected.clear()
+
         level_select.destroy()
 
         game_window = tk.Toplevel(root)
@@ -160,22 +165,17 @@ def open_game():
         def check_group():
             nonlocal selected, solved
 
+            current_selection = selected.copy()
             correct = False
-            print(level_array)
 
             for group in level_array:
-
                 items = group["items"]
 
-                print(set(selected))
-                print(set(items))
-
-                if set(selected) == set(items):
-
+                if set(current_selection) == set(items):
                     correct = True
                     solved += 1
 
-                    for word in selected:
+                    for word in current_selection:
                         buttons[word].configure(
                             bg="#2ecc71",
                             state="disabled"
@@ -185,12 +185,19 @@ def open_game():
                         text=f"Correct! {group['connection']}",
                         fg="#2ecc71"
                     )
-
                     break
 
             if not correct:
+                def reset_after_wrong():
+                    nonlocal selected
 
-                for word in selected:
+                    for word, btn in buttons.items():
+                        if btn["state"] != "disabled":
+                            btn.configure(bg="grey")
+
+                    selected.clear()
+
+                for word in current_selection:
                     buttons[word].configure(bg="#aa3333")
 
                 result_label.configure(
@@ -198,9 +205,10 @@ def open_game():
                     fg="#ff5555"
                 )
 
-                game_window.after(800, reset_colors)
+                game_window.after(600, reset_after_wrong)
+                return
 
-            selected = []
+            #selected = []
 
         def reset_colors():
 
@@ -225,7 +233,6 @@ def open_game():
                 if len(selected) < 4:
                     selected.append(word)
                     btn.configure(bg="#6666ff")
-                    btn.update_idletasks()
 
             if len(selected) == 4:
                 print ("checking group, ", selected)
@@ -362,20 +369,17 @@ def get_moon_phase():
     )
     title.pack(pady=30)
 
-    conn = http.client.HTTPSConnection("moon-phase.p.rapidapi.com")
+    url = "https://moon-phase.p.rapidapi.com/basic"
 
     headers = {
-        'x-rapidapi-key': "fbdb10e7fcmshdededf4df21b648p1b73d3jsn359ce78a12e9",
-        'x-rapidapi-host': "moon-phase.p.rapidapi.com",
-        'Content-Type': "application/json"
+        "x-rapidapi-key": "fbdb10e7fcmshdededf4df21b648p1b73d3jsn359ce78a12e9",
+        "x-rapidapi-host": "moon-phase.p.rapidapi.com"
     }
 
-    conn.request("GET", "/basic", headers=headers)
+    response = requests.get(url, headers=headers)
+    data = response.json()
 
-    res = conn.getresponse()
-    data = res.read()
-
-    phase_name = json.loads(data.decode("utf-8"))["phase_name"]
+    phase_name = data["phase_name"]
 
     image = moon_phase(phase_name)
 
