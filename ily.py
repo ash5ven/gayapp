@@ -165,6 +165,9 @@ def open_game():
         def check_group():
             nonlocal selected, solved
 
+            if len(selected) != 4:
+                return
+
             current_selection = selected.copy()
             correct = False
 
@@ -185,6 +188,9 @@ def open_game():
                         text=f"Correct! {group['connection']}",
                         fg="#2ecc71"
                     )
+
+                    selected.clear()
+
                     break
 
             if not correct:
@@ -236,7 +242,7 @@ def open_game():
 
             if len(selected) == 4:
                 print ("checking group, ", selected)
-                game_window.after(300, check_group)
+                game_window.after(200, lambda: check_group())
 
         row = 0
         col = 0
